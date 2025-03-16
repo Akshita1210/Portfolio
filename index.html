@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshita Kancharla - Portfolio</title>
+    <link rel="icon" type="image/png" href="Assets/Images/Home/webicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/172af0734d.js" crossorigin="anonymous"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WV9HVMDB');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        window.onload = function () {
+            if (!window.location.hash && !sessionStorage.getItem("hashSet")) {
+                sessionStorage.setItem("hashSet", "true");
+                window.location.replace(window.location.href + "#header");
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV9HVMDB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="header">
+        <nav>
+            <img src="Assets/Images/Home/logo.png" class="logo">
+            <ul class="nav-links">
+                <li><a href="#header" id="homeBtn" onmousedown="startPress()" onmouseup="endPress()"
+                        class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li class="dropdown">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <ul class="dropdown-content">
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="eventmanagement.html" class="nav-link">Event Management</a></li>
+                        <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
+        </nav>
+        <div id="mobile-nav" class="mobile-nav">
+            <i class="close-menu fas fa-times" onclick="toggleMenu()"></i>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <span onclick="toggleSubMenu()">Portfolio</span>
+                    <ul class="dropdown-submenu">
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="eventmanagement.html">Event Management</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="header-text">
+                <p>Aspiring Business Process Architect</p>
+                <h1>Hi, I'm <span class="name">Akshita</span><br>Kancharla from India</h1>
+                <button onclick="window.open('Assets/Images/Home/my-cv.pdf', '_blank')">Download CV</button>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="mailto:akshitakofficial@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/918925745338" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/akshita-kancharla" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- -----------about---------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Assets/Images/About/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>With a background in Engineering and hands-on experience in management role, I thrive at the
+                        intersection of technology and strategy.
+                        From working amongst innovative startup initiatives to exploring opportunities in IT
+                        industry, I bring a problem-solving mindset and a passion for continuous learning.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="experience">
+                        <ul>
+                            <li>
+                                <span class="custom-icon"><i class="fas fa-calendar-alt"></i></span> 2023 -
+                                2024<br><br>
+                                <span class="custom-icon"><i class="fas fa-briefcase"></i></span>Incubation Lead
+                                <br><br>
+                                <span class="custom-icon"><i class="fas fa-building"></i></span> Sathak Innovation
+                                Incubation Foundation
+                                <div class="dotted-line"></div>
+                            </li>
+                            <li>
+                                <span class="custom-icon"><i class="fas fa-calendar-alt"></i></span> 2022 -
+                                2023<br><br>
+                                <span class="custom-icon"><i class="fas fa-briefcase"></i></span>Finance
+                                Manager<br><br>
+                                <span class="custom-icon"><i class="fas fa-building"></i></span> Quazr Motors
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="skills">
+                        <ul>
+                            <li><span>Business Analysis</span><br><br>Skilled in translating business needs into
+                                clear technical requirements. Strong foundation in stakeholder management and
+                                process mapping.</li>
+                            <li><span>Data Analysis</span><br><br>Proficient with SQL, Excel, Python and
+                                visualization tools to extract meaningful insights from complex data. Quick to
+                                identify patterns and present actionable findings.</li>
+                            <li><span>Project Management</span><br><br>Organized coordinator with exceptional time
+                                management and problem-solving abilities. Effective communicator across all levels
+                                of an organization.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                <span>2025</span><br><br>
+                                <strong style="color: #c3c3c3;">Business Analyst Training</strong> at ITSTU2PRO.
+                            </li>
+                            <li>
+                                <span>2023</span><br><br>
+                                <strong style="color: #c3c3c3;">B.E. Mechatronics Engineering</strong> at Chennai
+                                Institute Of Technology, Chennai.
+                            </li>
+                            <li>
+                                <span>2019</span><br><br>
+                                <strong style="color: #c3c3c3;">HSC</strong> at Dr.KKR's Happy Valley School,
+                                Agiripalli, Vijayawada, Andhra Pradesh.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------portfolio------------ -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="Assets/Images/Portfolio/Projects/project.png">
+                    <div class="layer">
+                        <h3><strong>Projects</strong></h3>
+                        <p>I have worked on business analysis and data-related projects, applying problem-solving
+                            and analytical skills to real-world scenarios.</p>
+                        <a href="projects.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Assets/Images/Portfolio/Event Management/event.png">
+                    <div class="layer">
+                        <h3><strong>Event Management</strong></h3>
+                        <p>I have led various mega events and startup workshops improving performance by 20% through
+                            strategic interventions, gaining hands-on experience in leadership, coordination, and
+                            execution.</p>
+                        <a href="eventmanagement.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="Assets/Images/Portfolio/Certifications/certification.png">
+                    <div class="layer">
+                        <h3><strong>Certifications</strong></h3>
+                        <p>I have earned industry-recognized certifications in AI, business analysis, data
+                            analytics, and programming, continuously expanding my expertise.</p>
+                        <a href="certifications.html"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------contact------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><a href="mailto:akshitakofficial@gmail.com" target="_blank"><i
+                                class="fas fa-paper-plane"></a></i>akshitakofficial@gmail.com</p>
+                    <p><a href="https://wa.me/918925745338" target="_blank"><i class="fas fa-phone"></a></i>+91
+                        8925745338</p>
+                    <p><a href="https://maps.app.goo.gl/DBSxmmRDN2trLdeY9" target="_blank"><i
+                                class="fa fa-address-book"></a></i>Nellikuppam, Chengalpattu, Tamil Nadu,
+                        India-603108</p>
+                    <div class="social-icons-contact">
+                        <a href="mailto:akshitakofficial@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/918925745338" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/akshita-kancharla" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                    <button onclick="window.open('Assets/Images/Home/my-cv.pdf', '_blank')">Download CV</button>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2025 Akshita Kancharla. All rights reserved.</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+    <script>
+
+        let menuOpen = false;
+        let submenuOpen = false;
+
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const submenu = document.querySelector('.dropdown-submenu');
+            mobileNav.classList.toggle('active');
+            menuOpen = !menuOpen;
+            if (!menuOpen) {
+                submenu.classList.remove('active'); // Close submenu on menu close
+                submenuOpen = false;
+            }
+        }
+
+        function toggleSubMenu() {
+            const submenu = document.querySelector('.dropdown-submenu');
+            submenu.classList.toggle('active');
+            submenuOpen = !submenuOpen;
+        }
+
+        // Close submenu when other nav items are clicked
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (submenuOpen) {
+                    document.querySelector('.dropdown-submenu').classList.remove('active');
+                    submenuOpen = false;
+                }
+                toggleMenu(); // Automatically close the entire mobile menu after selection
+            });
+        });
+
+    </script>
+
+    <script>
+        // Toggle active link based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('div[id]'); // Match all divs with IDs
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80; // Adjust for navbar height
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Ensure "Home" button is highlighted when scrolled to the top
+            if (window.scrollY < 80) {
+                document.querySelector('.nav-link[href="#header"]').classList.add('active');
+            }
+
+
+            // Highlight Portfolio button when its subsections are active
+            if (currentSection.includes('portfolio')) {
+                document.querySelector('.dropdown > .nav-link').classList.add('active');
+            }
+        });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwo29imOo3-cmhYnu40CJqJg8xnwWa71VJl5QoANIvgbM8snwxHWF7aMXwtq2XMardC/exec'; // add your own app script link here
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+        const submitButton = form.querySelector("button[type='submit']");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            // Disable submit button and show "Submitting..." message
+            submitButton.disabled = true;
+            msg.innerHTML = "Submitting...";
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully";
+                    setTimeout(() => {
+                        msg.innerHTML = "";
+                        submitButton.disabled = false; // Re-enable the submit button
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    msg.innerHTML = "Error! Please try again.";
+                    setTimeout(() => {
+                        msg.innerHTML = "";
+                        submitButton.disabled = false; // Re-enable the submit button in case of an error
+                    }, 5000);
+                });
+        });
+    </script>
+</body>
+
+</html>

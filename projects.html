@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitions</title>
+    <link rel="icon" type="image/png" href="Assets/Images/Home/webicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/172af0734d.js" crossorigin="anonymous"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WV9HVMDB');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #080808;
+            color: #ffffff;
+        }
+
+        /* Desktop Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            position: fixed;
+            top: 15px;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 140px;
+            margin-left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: width 0.5s;
+        }
+
+        nav ul li a.active::after,
+        .mobile-nav ul li a.active::after {
+            width: 50%;
+        }
+
+        nav ul li a.active::after {
+            width: 50%;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 190px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 8px 12px rgba(254, 54, 71, 0.585);
+            padding: 10px 0;
+            margin-top: 0;
+        }
+
+        .dropdown-content li {
+            padding: 10px 15px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #ff004f;
+            transition: right 0.3s;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .mobile-nav ul li {
+            margin: 15px 0;
+        }
+
+        .mobile-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .mobile-nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: width 0.5s;
+        }
+
+        .mobile-nav ul li a.active::after {
+            width: 50%;
+        }
+
+        .mobile-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-nav .dropdown span {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .mobile-nav .dropdown-submenu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .mobile-nav .dropdown-submenu.active {
+            display: block;
+        }
+
+        .close-menu {
+            font-size: 30px;
+            color: #fff;
+            text-align: right;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 100px 10%;
+        }
+
+        h1 {
+            color: #ff004f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding-bottom: 5%;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+
+        .section:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .section img {
+            width: 40%;
+            height: 50%;
+            border-radius: 10px;
+            margin: 0 20px;
+            margin-top: 12%;
+        }
+
+        .section .content {
+
+            width: 55%;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ababab;
+            padding-top: 7%;
+            margin: 0 20px;
+        }
+
+        .video-container {
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 10%;
+            margin: 0 auto;
+        }
+
+        .video-container video {
+            width: 95%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .video-container1 {
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 10%;
+            margin: 0 auto;
+        }
+
+        #youtube-player {
+            width: 462.22px;
+            height: 255px;
+        }
+
+        .honor-right {
+            width: 40%;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 90px;
+        }
+
+        .view-more {
+            position: relative;
+            padding: 10px 40px;
+            margin: 50px auto;
+            width: fit-content;
+            text-decoration: none;
+            background-color: transparent;
+            /* Transparent background by default */
+            border: 2px solid #ff004f;
+           
+            color: #ffffff;
+            /* Text color is white initially */
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.6s, border-color 0.6s;
+            /* Slower transition */
+            z-index: 1;
+            /* Ensure the button is above the pseudo-element */
+        }
+
+        .view-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            /* Adjust margin as needed */
+        }
+
+        .view-more::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 100%;
+            bottom: 0;
+            left: 0;
+            background-color: #ff004f;
+            /* The color that will slide in */
+            transition: right 0.6s ease-in-out;
+            /* Slower animation */
+            z-index: -1;
+            /* Ensure the pseudo-element is behind the text */
+        }
+
+        .view-more:hover {
+            color: #000;
+            /* Text color becomes black on hover */
+            border-color: #ff004f;
+            /* Border color remains the same */
+        }
+
+        .view-more:hover::before {
+            right: 0;
+            /* Slide from the right */
+        }
+
+        .view-more:hover {
+            background-color: transparent;
+            /* Keep the background transparent during hover */
+        }
+
+
+
+        /* Media Query for Small Screens */
+        @media only screen and (max-width: 600px) {
+            nav .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            /* Logo size reduction */
+            .logo {
+                width: 100px;
+                /* Resize logo - adjust percentage as needed */
+                height: auto;
+                /* Maintain aspect ratio */
+                margin-left: -10px;
+                z-index: 1000;
+            }
+
+            .mobile-nav {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                width: 250px;
+                height: 100%;
+                background-color: #ff004f;
+                padding: 20px;
+                transition: right 0.3s;
+            }
+
+            .mobile-nav.active {
+                right: 0;
+            }
+
+            .close-menu {
+                font-size: 30px;
+                color: #fff;
+                text-align: right;
+                cursor: pointer;
+                margin-bottom: 40px;
+            }
+
+            .mobile-nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .mobile-nav ul li {
+                margin: 15px 0;
+            }
+
+            .mobile-nav ul li a {
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            .dropdown-submenu {
+                display: none;
+                padding-left: 15px;
+            }
+
+            .dropdown-submenu.active {
+                display: block;
+            }
+
+            .section {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            .video-container {
+                width: 100%;
+            }
+
+            .video-container1 {
+                width: 100%;
+                margin: auto;
+            }
+
+            #youtube-player {
+                width: 320px;
+                height: 180px;
+            }
+
+            .section img {
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            .slider-container {
+                width: 100vw;
+                height: auto;
+            }
+
+            .slider {
+                width: 100%;
+            }
+
+            .section .content {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .section:nth-child(odd) {
+                flex-direction: column;
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV9HVMDB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav>
+        <img src="Assets/Images/Home/logo.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="/#header" id="homeBtn" onmousedown="startPress()" onmouseup="endPress()"
+                    class="nav-link">Home</a></li>
+            <li><a href="/#about" class="nav-link">About</a></li>
+            <li class="dropdown">
+                <a href="/#portfolio" class="nav-link">Portfolio</a>
+                <ul class="dropdown-content">
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="eventmanagement.html" class="nav-link">Event Management</a></li>
+                    <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                </ul>
+            </li>
+            <li><a href="/#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+        <i class="close-menu fas fa-times" onclick="toggleMenu()"></i>
+        <ul>
+            <li><a href="/#header">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li class="dropdown">
+                <span onclick="toggleSubMenu()">Portfolio</span>
+                <ul class="dropdown-submenu">
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="eventmanagement.html">Event Management</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul>
+            </li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Projects</h1>
+
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Projects/project-1.png" alt="Project 1">
+            <div class="content">
+                <h2>Axis Bank Student Savings Scheme Analysis</h2>
+                <p>Led a comprehensive business analysis for Axis Bank's Student Savings Scheme, a fully digital savings
+                    platform designed for minors (ages 3-8).
+                    Identified key customer pain points in existing minor savings options, including mandatory branch
+                    visits and extensive paperwork.
+                    Developed requirements for a seamless digital onboarding process that could be completed within 5
+                    minutes, with structured deposit plans starting at just INR 500.
+                    The solution integrated with Axis Bank's existing digital infrastructure, complied with RBI
+                    regulations, and featured competitive interest rates with tax benefits.
+                    This initiative successfully improved customer retention by targeting a younger demographic while
+                    promoting digital adoption among existing account holders.(Training project - FCD)</p>
+                    <br>
+                <a href="https://drive.google.com/drive/folders/1aG46sQyGhog-NvglYzTXPp2MXBsT6FHx?usp=drive_link"
+                    target="_blank" class="view-more">View More</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Projects/project-2.png" alt="Project 2">
+            <div class="content">
+                <h2>Amigo Internal App for Branch Users</h2>
+                <p>Conducted business analysis for 'Amigo,' a centralized web-based platform designed for UAE bank
+                    branch staff to streamline customer onboarding, money transfers, and forex transactions.
+                    Identified critical issues in the existing process including lack of centralization, high fraud
+                    risk, transaction delays, and limited reporting visibility.
+                    Developed requirements for a comprehensive solution featuring integrated KYC verification, real-time
+                    processing with compliance checks, and role-based security protocols.
+                    The implemented system significantly reduced transaction processing time, enhanced fraud prevention
+                    mechanisms, and improved customer satisfaction through streamlined service delivery while
+                    maintaining strict compliance with UAE banking regulations.(Training project - FCD)</p>
+                    <br>
+                <a href="https://drive.google.com/drive/folders/1CsQWbTM8tCEdAYWGZd1QHujSOWuyb33l?usp=drive_link"
+                    target="_blank" class="view-more">View More</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Projects/project-3.png" alt="Project 3">
+            <div class="content">
+                <h2>Finsapfia Admin Dashboard Enhancement</h2>
+                <p>ed business analysis for the enhancement of Finsapfia's admin portal dashboard, serving one of
+                    India's largest GST, TDS, and Tally Foundation training providers.
+                    Assessed limitations in the existing dashboard's data visualization and analytics capabilities that
+                    hindered effective business metric tracking.
+                    Developed requirements for a comprehensive solution that integrated multiple data sources,
+                    implemented sentiment analysis for customer feedback, and created interactive visualizations with
+                    drill-down capabilities.
+                    The enhanced dashboard successfully delivered six key interactive charts with robust filtering
+                    options and maintained excellent performance standards with loading times under 3 seconds, enabling
+                    better decision-making across marketing and customer service departments.(Training project - FCD)
+                </p>
+                <br>
+                <a href="https://drive.google.com/drive/folders/1x1ybpNEzFpXv24cUyLME1ty-OQLGJvmb?usp=drive_link"
+                    target="_blank" class="view-more">View More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2025 Akshita Kancharla. All rights reserved.</p>
+    </div>
+
+    <script>
+
+        let menuOpen = false;
+        let submenuOpen = false;
+
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const submenu = document.querySelector('.dropdown-submenu');
+            mobileNav.classList.toggle('active');
+            menuOpen = !menuOpen;
+            if (!menuOpen) {
+                submenu.classList.remove('active'); // Close submenu on menu close
+                submenuOpen = false;
+            }
+        }
+
+        function toggleSubMenu() {
+            const submenu = document.querySelector('.dropdown-submenu');
+            submenu.classList.toggle('active');
+            submenuOpen = !submenuOpen;
+        }
+
+        // Close submenu when other nav items are clicked
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (submenuOpen) {
+                    document.querySelector('.dropdown-submenu').classList.remove('active');
+                    submenuOpen = false;
+                }
+                toggleMenu(); // Automatically close the entire mobile menu after selection
+            });
+        });
+    </script>
+
+    <script>
+
+        let player;
+
+        // Load the IFrame Player API asynchronously
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // Initialize YouTube player
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('youtube-player', {
+                videoId: 'vpgmOnJXQqE',  // Replace with your video ID
+                playerVars: {
+                    autoplay: 1,
+                    loop: 1,
+                    playlist: 'vpgmOnJXQqE',  // Needed for looping
+                    controls: 1,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    rel: 0,
+                    mute: 0  // Start unmuted
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            handleVideoVisibility();
+        }
+
+        function handleVideoVisibility() {
+            const rect = player.getIframe().getBoundingClientRect();
+            const fullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+            if (fullyVisible) {
+                player.playVideo();
+            } else {
+                player.pauseVideo();
+            }
+        }
+
+        window.addEventListener('scroll', handleVideoVisibility);
+        window.addEventListener('load', handleVideoVisibility);
+
+        // Video auto-play on scroll into view
+        const video = document.querySelector('.video-container video');
+
+        function handleVideoPlay() {
+            const rect = video.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        window.addEventListener('scroll', handleVideoPlay);
+        window.addEventListener('load', handleVideoPlay);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <link rel="icon" type="image/png" href="Assets/Images/Home/webicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/172af0734d.js" crossorigin="anonymous"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WV9HVMDB');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #080808;
+            color: #ffffff;
+        }
+
+        /* Desktop Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            position: fixed;
+            top: 15px;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+        }
+
+        .logo {
+            width: 140px;
+            margin-left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: width 0.5s;
+        }
+
+        nav ul li a.active::after,
+        .mobile-nav ul li a.active::after {
+            width: 50%;
+        }
+
+        nav ul li a.active::after {
+            width: 50%;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 190px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0px 8px 12px rgba(254, 54, 71, 0.585);
+            padding: 10px 0;
+            margin-top: 0;
+        }
+
+        .dropdown-content li {
+            padding: 10px 15px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #ff004f;
+            transition: right 0.3s;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .mobile-nav ul li {
+            margin: 15px 0;
+        }
+
+        .mobile-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .mobile-nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: width 0.5s;
+        }
+
+        .mobile-nav ul li a.active::after {
+            width: 50%;
+        }
+
+        .mobile-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-nav .dropdown span {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .mobile-nav .dropdown-submenu {
+            display: none;
+            padding-left: 20px;
+        }
+
+        .mobile-nav .dropdown-submenu.active {
+            display: block;
+        }
+
+        .close-menu {
+            font-size: 30px;
+            color: #fff;
+            text-align: right;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .container {
+            padding: 100px 10%;
+        }
+
+        h1 {
+            color: #ff004f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            padding-bottom: 5%;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10%;
+        }
+
+        .section:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .section img {
+            width: 40%;
+            border-radius: 10px;
+            margin: 0 20px;
+            margin-top: 12%;
+        }
+
+        .section .content {
+            width: 55%;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #ababab;
+            padding-top: 7%;
+            margin: 0 20px;
+        }
+
+        .video-container {
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+            padding-top: 10%;
+            margin: 0 auto;
+        }
+
+        .video-container video {
+            width: 95%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            background: #262626;
+            font-weight: 300;
+            margin-top: 90px;
+        }
+
+        /* Media Query for Small Screens */
+        @media only screen and (max-width: 600px) {
+            nav .menu-icon {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            /* Logo size reduction */
+            .logo {
+                width: 100px;
+                /* Resize logo - adjust percentage as needed */
+                height: auto;
+                /* Maintain aspect ratio */
+                margin-left: -10px;
+                z-index: 1000;
+            }
+
+            .mobile-nav {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                width: 250px;
+                height: 100%;
+                background-color: #ff004f;
+                padding: 20px;
+                transition: right 0.3s;
+            }
+
+            .mobile-nav.active {
+                right: 0;
+            }
+
+            .close-menu {
+                font-size: 30px;
+                color: #fff;
+                text-align: right;
+                cursor: pointer;
+                margin-bottom: 40px;
+            }
+
+            .mobile-nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .mobile-nav ul li {
+                margin: 15px 0;
+            }
+
+            .mobile-nav ul li a {
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            .dropdown-submenu {
+                display: none;
+                padding-left: 15px;
+            }
+
+            .dropdown-submenu.active {
+                display: block;
+            }
+
+            .section {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            h2 {
+                text-align: center;
+            }
+
+            .video-container {
+                width: 100%;
+            }
+
+            .section img {
+                width: 80%;
+                margin: 10px auto;
+            }
+
+            .section .content {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .section:nth-child(odd) {
+                flex-direction: column;
+            }
+
+            .copyright {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV9HVMDB" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav>
+        <img src="Assets/Images/Home/logo.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="/#header" id="homeBtn" onmousedown="startPress()" onmouseup="endPress()"
+                    class="nav-link">Home</a></li>
+            <li><a href="/#about" class="nav-link">About</a></li>
+            <li class="dropdown">
+                <a href="/#portfolio" class="nav-link">Portfolio</a>
+                <ul class="dropdown-content">
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="eventmanagement.html" class="nav-link">Event Management</a></li>
+                    <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                </ul>
+            </li>
+            <li><a href="/#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <i class="menu-icon fas fa-bars" onclick="toggleMenu()"></i>
+    </nav>
+    <div id="mobile-nav" class="mobile-nav">
+        <i class="close-menu fas fa-times" onclick="toggleMenu()"></i>
+        <ul>
+            <li><a href="/#header">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li class="dropdown">
+                <span onclick="toggleSubMenu()">Portfolio</span>
+                <ul class="dropdown-submenu">
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="eventmanagement.html">Event Management</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                </ul>
+            </li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Certifications</h1>
+
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-1.jpg" alt="certificate 1">
+            <div class="content">
+                <h2>Google Data Analytics Professional Certificate</h2>
+                <p>Completed an intensive 8-course program covering the entire data analysis process, from asking the
+                    right questions to cleaning, analyzing, and visualizing data. Gained hands-on experience with SQL, R
+                    programming, and Tableau, developing skills to turn raw data into actionable insights for informed
+                    decision-making.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-2.jpg" alt="certificate 2">
+            <div class="content">
+                <h2>IT Business Analyst & Agile Certification(ITSTU2PRO)</h2>
+                <p>Completed an intensive 2-month training program covering core business analysis principles and Agile
+                    methodologies. The course provided a structured blend of theoretical concepts and hands-on practice
+                    through case studies and mimic projects. Gained expertise in requirement elicitation, user story
+                    creation, process modeling, and Agile frameworks like Scrum and Kanban. This certification
+                    strengthened my ability to analyze business needs, collaborate with stakeholders, and contribute
+                    effectively to Agile project environments.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-3.jpg" alt="certificate 3">
+            <div class="content">
+                <h2>Introduction to Data and Data Science(365 DataScience)</h2>
+                <p>This course provided a foundational understanding of data science, covering key concepts like data
+                    types, collection methods, and analysis techniques. It introduced essential statistical concepts,
+                    the role of data scientists, and the practical applications of data-driven decision-making. This
+                    certification strengthened my grasp of how data is structured, processed, and used to extract
+                    insights, laying the groundwork for advanced analytics and machine learning.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-4.jpg" alt="certificate 4">
+            <div class="content">
+                <h2>Foundations of Business Intelligence(Google & Coursera)</h2>
+                <p>This course provided a strong introduction to business intelligence concepts, covering data-driven
+                    decision-making, data modeling, and analytical techniques. It enhanced my ability to interpret
+                    business data effectively, helping me build skills essential for roles in data analytics and
+                    business strategy.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-5.jpg" alt="certificate 5">
+            <div class="content">
+                <h2>The Path to Insights: Data Models and Pipelines(Google & Coursera)</h2>
+                <p>This course deepened my understanding of data models, pipelines, and their role in transforming raw
+                    data into meaningful insights. It strengthened my skills in structuring and processing data
+                    efficiently, essential for business intelligence and analytics roles.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-6.jpg" alt="certificate 6">
+            <div class="content">
+                <h2>AI-Enhanced Excel Mastery(Freedom With AI)</h2>
+                <p>This course provided in-depth training on leveraging AI-powered features in Excel to automate tasks,
+                    optimize data analysis, and enhance decision-making. It covered advanced formulas, AI-driven
+                    insights, and efficiency techniques essential for data handling and business intelligence.</p>
+            </div>
+        </div>
+        <div class="section">
+            <img src="Assets/Images/Portfolio/Certifications/certificate-7.jpg" alt="certificate 7">
+            <div class="content">
+                <h2>Entrepreneurship Summit 2023 - IIT Bombay</h2>
+                <p>Awarded a Certificate of Participation for attending E-Summit 2023, organized by E-Cell, IIT Bombay
+                    on January 28-29, 2023. The summit focused on innovation, startups, and business strategies,
+                    featuring industry leaders and networking opportunities with entrepreneurs.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © 2025 Akshita Kancharla. All rights reserved.</p>
+    </div>
+
+    <script>
+
+        let menuOpen = false;
+        let submenuOpen = false;
+
+        function toggleMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            const submenu = document.querySelector('.dropdown-submenu');
+            mobileNav.classList.toggle('active');
+            menuOpen = !menuOpen;
+            if (!menuOpen) {
+                submenu.classList.remove('active'); // Close submenu on menu close
+                submenuOpen = false;
+            }
+        }
+
+        function toggleSubMenu() {
+            const submenu = document.querySelector('.dropdown-submenu');
+            submenu.classList.toggle('active');
+            submenuOpen = !submenuOpen;
+        }
+
+        // Close submenu when other nav items are clicked
+        document.querySelectorAll('.mobile-nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (submenuOpen) {
+                    document.querySelector('.dropdown-submenu').classList.remove('active');
+                    submenuOpen = false;
+                }
+                toggleMenu(); // Automatically close the entire mobile menu after selection
+            });
+        });
+    </script>
+
+    <script>
+        // Video auto-play on scroll into view
+        const video = document.querySelector('.video-container video');
+
+        function handleVideoPlay() {
+            const rect = video.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        window.addEventListener('scroll', handleVideoPlay);
+        window.addEventListener('load', handleVideoPlay);
+    </script>
+</body>
+
+</html>

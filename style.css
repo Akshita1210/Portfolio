@@ -1,0 +1,899 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color: #fff;
+    padding-top: 50px;
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(Assets/Images/Home/background.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.container{
+    padding: 10px 10%;
+}
+
+
+/* Desktop Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    position: fixed;
+    top:15px;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+}
+.logo{
+    width: 140px;
+    margin-left: 0;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+}
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+nav ul li a.active::after,
+.mobile-nav ul li a.active::after {
+    width: 50%;
+}
+nav ul li a.active::after {
+    width: 50%;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 190px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 8px 12px rgba(254, 54, 71, 0.585);
+    padding: 10px 0;
+    margin-top: 0;
+}
+.dropdown-content li {
+    padding: 10px 15px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #ff004f;
+    transition: right 0.3s;
+    padding: 20px;
+    z-index: 1000;
+}
+.mobile-nav.active {
+    right: 0;
+}
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+.mobile-nav ul li {
+    margin: 15px 0;
+}
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+}
+.mobile-nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+.mobile-nav ul li a.active::after {
+    width: 50%;
+}
+
+.mobile-nav ul li a:hover::after {
+    width: 100%;
+}
+.mobile-nav .dropdown span {
+    color: #fff;
+    font-size: 1.5rem;
+}
+.mobile-nav .dropdown-submenu {
+    display: none;
+    padding-left: 20px;
+}
+.mobile-nav .dropdown-submenu.active {
+    display: block;
+}
+.close-menu {
+    font-size: 30px;
+    color: #fff;
+    text-align: right;
+    cursor: pointer;
+    z-index: 10001;
+}
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+
+/* Social Media Icons */
+.social-icons {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(-50%);
+    transition: right 0.5s ease;
+    z-index: 100;
+}
+
+.social-icons a {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    transition: all 0.5s ease;
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.social-icons a:hover {
+    background-color: #ff004f;
+    color: #0B0C10; /* Hover effect */
+    border: #ff004f;
+    transform: translateX(15px); /* Slide right animation */
+}
+
+.social-icons a i {
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.social-icons a:hover i {
+    color: #000; /* Icon becomes black on hover */
+}
+
+/* -----------about--------------- */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+    height: 100vh;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 40%;
+    padding-top: 3%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 55%;
+    padding-top: 3%;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 5%;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links:hover:after{
+    width: 100%;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 15px 0;
+}
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+.custom-icon {
+    color: #ff004f;
+    margin-right: 8px;
+}
+.dotted-line {
+    border-top: 1px dotted rgba(123, 117, 123, 0.379); /* Theme color with opacity */
+    margin-top: 20px;
+    width: 100%;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+/* -------portfolio----------- */
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 5px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(254, 54, 71, 0.585);
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+   transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover{
+    box-shadow: 0px 0px 0px rgba(254, 54, 71, 0.585);
+    transition: 0.6s; /* Slower transition */
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    position: relative;
+    padding: 10px 40px;
+    margin: 50px auto;
+    width: fit-content;
+    background-color: transparent; /* Transparent background by default */
+    border: 2px solid #ff004f;
+    color: #ffffff; /* Text color is white initially */
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.6s, border-color 0.6s; /* Slower transition */
+    z-index: 1; /* Ensure the button is above the pseudo-element */
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #ff004f; /* The color that will slide in */
+    transition: right 0.6s ease-in-out; /* Slower animation */
+    z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+.btn:hover {
+    color: #000; /* Text color becomes black on hover */
+    border-color: #ff004f; /* Border color remains the same */
+}
+  
+.btn:hover::before {
+    right: 0; /* Slide from the right */
+}
+  
+.btn:hover {
+    background-color: transparent; /* Keep the background transparent during hover */
+}
+
+.portfolio-header {
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio-header h1 {
+    font-size: 60px;
+    color: #ff004f;
+    margin-bottom: 20px;
+}
+
+.portfolio-section {
+    padding: 50px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.portfolio-content {
+    flex: 1;
+    text-align: left;
+}
+
+.portfolio-content h2 {
+    font-size: 36px;
+    color: #ff004f;
+    margin-bottom: 20px;
+}
+
+.portfolio-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ababab;
+}
+
+.portfolio-image {
+    flex: 1;
+    text-align: center;
+}
+
+.portfolio-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+/* ------------Honor Section------------ */
+#snapshots {
+    height: 100vh;
+}
+.honor-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 10%;
+    gap: 20px;
+    color: #ababab;
+    padding-top: 7%;
+}
+
+.honor-container img {
+    width: 35%;
+    border-radius: 10px;
+    margin: 0 20px;
+    margin-top: 40px;
+}
+.honor-right {
+    flex-basis: 55%;
+    text-align: left;
+    padding-top: 5px;
+}
+.honor-right h1 {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 5%;
+}
+.honor-right p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* ---------contact-------- */
+#contact{
+    padding: 150px 0;
+    height: 80vh;
+    margin-top: 45%S;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    z-index: 100;
+}
+.contact-left p i{
+    color: #C5C6C7;
+    margin-right: 15px;
+    font-size: 25px;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.contact-left p i:hover{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+    transform: scale(1.3); /* Scale up by 30% */
+    z-index: 100;
+}
+
+.social-icons-contact {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+    padding-bottom: 30px;
+    gap: 15px;
+    opacity: 1; /* Ensure icons are always visible */
+    transition: top 0.5s ease;
+    z-index: 100; /* Ensure it is above all background layers */
+}
+
+.social-icons-contact a{ 
+    z-index: 100;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin-right: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid #C5C6C7;
+    transition: transform 0.5s ease;
+    color: #C5C6C7;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+
+.social-icons-contact a:hover{
+    background-color: #ff004f;
+    border: 3px solid #ff004f;
+    color: #0B0C10; /* Hover effect */
+    transform: translateY(-5px); /* Slide top animation */
+}
+
+button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: transparent; /* Transparent background by default */
+    border: 2px solid #ff004f;
+    border-radius: 30px;
+    color: #ffffff; /* Text color is white initially */
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.6s, border-color 0.6s; /* Slower transition */
+    z-index: 1; /* Ensure the button is above the pseudo-element */
+}
+  
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #ff004f; /* The color that will slide in */
+    transition: right 0.6s ease-in-out; /* Slower animation */
+    z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+  
+button:hover {
+    color: #000; /* Text color becomes black on hover */
+    border-color: #ff004f; /* Border color remains the same */
+}
+  
+button:hover::before {
+    right: 0; /* Slide from the right */
+}
+  
+button:hover {
+    background-color: transparent; /* Keep the background transparent during hover */
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 10px 40px;
+    margin-left: 45%;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#msg{
+    color: #61b752;
+    margin-top: -30px;
+    display: block;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 90px;
+}
+/*------------------css for Tablet----------------*/
+/* Tablet media query */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 1.2em; /* Adjust font size for tablet */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Increase heading size */
+    }
+
+    p {
+        font-size: 1.1em; /* Slightly larger paragraph text */
+    }
+
+    .navbar {
+        padding: 20px; /* More padding in the navbar */
+        display: flex; /* Flex display for better alignment */
+        justify-content: space-between; /* Space out items */
+    }
+
+    .social-icons {
+        display: none; 
+    }
+
+    /* Additional tablet-specific styles can be added here */
+}
+/* -----------------css for small screens--------- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+/* General body styling adjustments */
+body {
+    font-size: 14px; /* Adjust base font size for readability */
+    padding: 0; /* Add some padding to prevent text from touching edges */
+    margin: 0; /* Ensure no default margin on body */
+}
+/* Header Adjustments */
+#header {
+    background-image: url(Assets/Images/Home/phone-background.png);
+    background-size: cover; /* Make background cover the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: absolute; /* Fix the header */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it left */
+    right: 0; /* Align it right */
+    overflow: hidden; /* Prevent any child overflow */
+    z-index: 2; /* Ensure the header is above sections */
+}
+/* Header text adjustments */
+.header-text {
+    text-align: center;
+    padding: 10px 0; /* Add vertical spacing */
+    font-size: 1.5em; /* Make header text larger for visibility */
+}
+   
+.header-text h1{
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+button {
+   margin-top: 1px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #ff004f; /* Name color */
+    color: #ffffff;
+    padding: 10px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+/* Logo size reduction */
+.logo {
+    width: 100px; /* Resize logo - adjust percentage as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: -10px;
+    z-index: 1000;
+}
+button:hover {
+    background-color: #ff004f; /* Solid color on hover */
+    color: #0B0C10; /* Text color on hover */
+}
+.social-icons {
+    display: none; /* Hides the social media icons */
+}
+nav .menu-icon {
+    display: block;
+    padding: 10px 0;
+}
+nav ul {
+    display: none;
+}
+ /* Mobile Navigation adjustments */
+ .mobile-nav {
+    position: fixed; /* Fix mobile nav at the top */
+    top: 0; /* Align it to the top */
+    right: -100%; /* Start off-screen */
+    width: 250px; /* Width of the mobile nav */
+    height: 100%; /* Full height */
+    background-color: #ff004f; /* Background color */
+    padding: 20px; /* Padding for content inside */
+    transition: right 0.3s; /* Smooth transition when toggled */
+    z-index: 1000; /* Stack above other content */
+}
+.mobile-nav.active {
+    right: 0;
+    z-index: 1000;
+}
+.close-menu {
+    font-size: 30px;
+    color: #fff;
+    text-align: right;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+.mobile-nav ul li {
+    margin: 15px 0;
+}
+.mobile-nav ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    position: relative;
+}
+.dropdown-submenu {
+    display: none;
+    padding-left: 15px;
+}
+.dropdown-submenu.active {
+    display: block;
+}
+.sub-title{
+    font-size: 40px;
+}
+section {
+    padding-top: 20px; /* Space below header */
+    z-index: 1; /* Content z-index */
+}
+#about {
+    margin-top: 100vh;
+    padding: 20px; /* Padding for the about section */
+    margin-bottom: 20px; /* Space below the about section */
+    color: #ababab; /* Text color, adjust as necessary */
+    height: auto; /* Allow height to adjust to content */
+}
+#about p{
+    line-height: 1.6; /* Adjust the value for desired line spacing */
+}
+.about-col-1, .about-col-2{
+    flex-basis: 100%;
+}
+.about-col-1{
+    margin-bottom: 60px;
+}
+.about-col-2{
+    font-size: 1em;
+}
+.about-col-2 .sub-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.tab-links{
+    font-size: 1.2em;
+    margin-right: 20px;
+}
+#portfolio{
+    padding: 20px; /* Add padding around the portfolio section */
+    text-align: center; /* Center-align text for small devices */
+    margin-bottom: 50px;
+}
+#portfolio .sub-title{
+    text-align: center;
+    padding-bottom: 30px;
+}
+#snapshots {
+    padding: 20px 10%; /* Add padding around the honors section */
+    text-align: center; /* Center-align text for small devices */
+    margin-bottom: 20px;
+    height: auto;
+}
+#snapshots .sub-title{
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+.honor-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+    text-align: center;
+}
+.honor-container img {
+    width: 80%;
+    margin: 10px auto;
+}
+.honor-right {
+    flex-basis: 100%;
+}
+.honor-left {
+    width: 100%;
+    max-height: 75vh;
+}
+.honor-right h1 {
+    order: -1;
+   font-size: 28px;
+}
+.honor-right p {
+    font-size: 1em; /* Adjust paragraph size */
+    line-height: 1.5; /* Space between lines for readability */
+    margin-bottom: 10px; /* Space below the paragraph */
+    margin-top: 15px; /* Reduced spacing above the contact section */
+}
+#contact {
+    padding: 20px 0; /* Add padding around the contact section */
+}
+.contact-left, .contact-right{
+    margin-top: 30px;
+    flex-basis: 100%;
+    font-size: 1em;
+    z-index: 1; /* Bring contact form above other content */
+    position: relative; /* Ensure it respects z-index */
+}
+.sub-title{
+    text-align: center;
+}
+button {
+    margin-bottom: 80px;
+}
+form .btn2{
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    cursor: pointer;
+}
+.copyright{
+    font-size: 10px;
+    width: 100%;
+}
+#msg{
+    color: #61b752;
+    margin-top: -30px;
+    display: block;
+}
+}
